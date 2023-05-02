@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+   
+    
+    <!-- bootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/cb111e4a51.js" crossorigin="anonymous"></script>
+
+    <title>Arnia: Projeto I</title>
+</head>
+<body>
+
+    <main>
+        <div class="container d-flex justify-content-center mt-5 "> 
+            <div class="row col-6 bg-white shadow rounded-4 d-flex justify-content-center p-5 gap-3 ">
+                <img src="../../src/cadastro/logo.png" class="img-fluid w-50" alt="logo, wexei">
+                <div class="d-flex flex-column text-center"> 
+                    <p class="text-arnia fs-5 m-0 fw-medium">Seja bem-vindo(a)!</p>
+                    <p class="text-arnia fs-5 fw-light">Preencha os campos para se cadastrar</p>
+                </div>
+                <form action="" id="formCadastro" class="d-flex flex-column justify-content-center gap-4 col-10 ">
+                    <div>
+                        <label class="text-secondary-emphasis" for="name">Nome</label>
+                        <div class=" input-group">
+                            <input placeholder="Enzo da silva" type="text" id="name" name="name" class="form-control rounded border p-2 ps-3">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-secondary-emphasis" for="email">E-mail</label>
+                        <div class=" input-group">
+                            <input placeholder="enzo@email.com" type="text" id="email" name="email" class="form-control rounded border p-2 ps-3">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <input class="btn bg-arnia text-light fs-5 w-50 px-4 py-2 shadow btn-hover-transparent" type="submit" value="Prosseguir   -> ">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>

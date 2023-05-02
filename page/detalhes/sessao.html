@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/cb111e4a51.js" crossorigin="anonymous"></script>
+
+    <title>Arnia: Projeto I</title>
+</head>
+<body>
+     
+    
+    <header class="d-flex">
+        <div class="shadow bg-white d-flex justify-content-center align-items-center" id="header-logo">
+            <img src="../../src/header/logo.png" alt="LOGO">
+        </div>
+        <div class="row p-2 bg-white shadow m-0" style="width: 100%;">
+            <div class="container d-flex justify-content-between">
+                <div class="d-flex align-items-center p-2">
+                    <a href="../dashboard/index.html" class="text-decoration-none d-none">Voltar para listagem</a>
+                </div>
+                <div class="d-flex me-2">
+                    <!-- <p class="fs-2 text-arnia">Bem vindo(a),<span class="fw-bold">Usuario</span></p>    -->
+                    <div class="dropdown">
+                        <span class="fs-2 text-arnia">
+                            Bem vindo(a),
+                        </span>
+                        <span class="btn btn-transparent dropdown-toggle fs-2 p-0 " id="dd-header" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span id="nomeDoUsuario" class="fs-2 text-arnia"> Usuario </span>
+                        </span>
+                        <div class="dropdown-menu py-0 justify-content-center border-0 bg-transparent">
+                              <div class="row drop-logoff pt-2">
+                                <div class="d-flex justify-content-center my-0"><i class="fa-solid fa-play fa-rotate-270 fa-xl" style="color: #ffffff;"></i></div>
+                                <div class="bg-gradiente rounded-top-4 p-2 seta">
+                                    <p class="m-0">Admin</p>
+                                    <p id="emailDoUsuario" class="m-0 fs-email">lucasdiascarvalho22@email.com</p>
+                                </div>
+                                <div class="bg-white rounded-bottom-4 p-2 p-3">
+                                    <p class="m-0"><i class="fa-solid fa-arrow-turn-up fa-rotate-90" style="color: #25e928;"></i></i><button onclick="window.location.replace(`http://127.0.0.1:5500/page/login/index.html`)" class="ms-2 border-0 bg-transparent">Sair</button></p>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <div class="row bg-white rounded p-2">
+                <a class="d-flex gap-2 align-items-center text-decoration-none text-black" href="../prontuario/index.html"><i class="fa-solid fa-chevron-left" style="color: #000000;"></i>Voltar</a>
+            </div>
+        </div>
+        <div class="container col-8 start-0">
+            <h2>sessão</h2>
+            <div class="container bg-white rounded shadow py-2 px-3 d-flex flex-column gap-3">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p id="tituloDaSessao" class="fs-5 m-0">sessão 0</p>
+                        <p id="dataDaSessao" class=" m-0" style="font-size: 0.8rem;">data e hora</p>
+                    </div>
+                    <div>
+                        <button onclick="abrirModal()" class="p-0 px-1 bg-transparent border-primary rounded"><i class="fa-solid fa-pen" style="color: #2c5ee9;"></i></button>
+                        <button onclick="excluirSessao(idSessao)" class="p-0 px-1 bg-transparent border-danger rounded"><i class="fa-solid fa-trash-can" style="color: #f43e3e;"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p id="detalheDaSessao">detalhes da sessão Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo perspiciatis eaque, maiores ducimus inventore dicta accusamus quae nisi pariatur minima, nulla omnis ab recusandae officia id possimus sequi nam. Quisquam!</p>
+                </div>
+                <div>
+                    <h5>pagamento</h5>
+                    <div class="d-flex gap-5">
+                        <div >
+                            <label class="text-secondary" for="">Valor</label>
+                            <p id="valorDaSessao">R$200,00</p>
+                        </div>
+                        <div>
+                            <label class="text-secondary" for="">Forma de pagamento</label>
+                            <p id="metodoPagamento">Pix</p>
+                        </div>
+                        <div>
+                            <label class="text-secondary" for="">Status</label>
+                            <p id="estadoPagamento">Pago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="bg-modal position-fixed d-none" id="modalNovaSessao">
+        <div class="container col-6 rounded bg-white position-relative modal-sessao">
+            <div class="d-flex justify-content-between">
+                <h4 class="text-arnia">Nova sessão</h4>
+                <button class="border-0 bg-transparent" onclick="fecharModal(modalNovaSessao)"><i class="fa-solid fa-circle-xmark" style="color: #000000;"></i></button>
+            </div>
+            <form action="" id="formNovaSessao" class="overflow-y-scroll overflow-x-hidden" style="height: 20rem;">
+                <div class="d-flex flex-column gap-3 p-1">
+                    <div class="d-flex gap-1 ">
+                        <img src="../../src/prontuario/Vector1.png" alt=""><span class="fs-5">Dados Gerais</span>
+                    </div>
+                    <div class="row">
+                        <div class="d-flex flex-column col-4 text-secondary " ><label class="" for=""></label>Data*<input class="rounded border border-secondary-subtle px-4 py-1 text-secondary nSessao" type="date"></div>
+                        <div class="d-flex flex-column col-4 text-secondary" ><label class="" for=""></label>Hora de inicio*<input class="rounded border border-secondary-subtle px-4 py-1 text-secondary nSessao" type="time"></div>
+                        <div class="d-flex flex-column col-4 text-secondary" ><label class="" for=""></label>Hora fim*<input class="rounded border border-secondary-subtle px-4 py-1 text-secondary nSessao" type="time"></div>
+                    </div>
+                    <hr>
+                    <div class="d-flex gap-1 ">
+                        <img src="../../src/prontuario/Vector2.png" alt=""><span class="fs-5">Sessão</span>
+                    </div>
+                    <div>
+                        <div class="d-flex flex-column text-secondary"><label for="tituloSessaso">Titulo*</label><input class="rounded border border-secondary-subtle px-4 py-1 nSessao " id="tituloSessaso" name="tituloSessaso" type="text"></div>
+                        <div class="d-flex flex-column text-secondary"><label for="txtAreaSessao">Resumo da sessão*</label><textarea  class="rounded border border-secondary-subtle px-4 py-1 nSessao " name="txtAreaSessao" id="txtAreaSessao" cols="30" rows="5"></textarea></div>
+                    </div>
+                    <hr>
+                    <div class="d-flex gap-1 ">
+                        <img src="../../src/prontuario/Vector3.png" alt=""><span class="fs-5">Pagamento</span>
+                    </div>
+                    <div class="row">
+                        <div class="d-flex flex-column col-4 text-secondary"><label for="">Valor</label><input class="rounded border border-secondary-subtle px-4 py-1 nSessao " type="text" placeholder="R$150.99" ></div>
+                        <div class="d-flex flex-column col-4 text-secondary">
+                            <label for="">Forma de pagamento</label>
+                            <select class="rounded border border-secondary-subtle px-4 py-1 text-secondary nSessao" name="" id="">
+                                <option value="1">Pix</option>
+                                <option value="2">Cartão</option>
+                                <option value="3">Dinheiro</option>
+                            </select></div>
+                        <div class="d-flex flex-column col-4 text-secondary">
+                            <label for="">Status</label>
+                            <div class="d-flex gap-2">
+                                <input class="nSessao" type="radio" name="ststusPagamento" value="true">Pago
+                                <input class="nSessao" type="radio" name="ststusPagamento" value="false">Não pago
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <img src="../../src/prontuario/pin.png" alt="">
+                        <div >
+                            <span class="text-secondary" style="font-size: 0.8rem;"><b class="text-black">Dica:</b>Registrar os pagamentos das sessões irá te auxiliar na sua organização financeira.</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="">
+                <div class="p-4">
+                    <hr class="hr-modal border-2 border-dark-subtle  position-absolute start-0">
+                </div>
+                <div class=" modal-sessao-footer ">
+                    <p class="text-secondary mb-0">*Campos obrigatórios</p>
+                    <div class="d-flex gap-2 ">
+                        <button onclick="fecharModal(modalNovaSessao)" class="btn">Cancelar</button>
+                        <button id="btnEditarSS" form="formNovaSessao" class="btn btn-arnia px-5 text-white">Editar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="./app.js   "></script>
+</body>
+</html>

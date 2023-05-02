@@ -1,0 +1,41 @@
+{
+  "cadastro": [
+    {
+      "nome": "nome",
+      "email": "email@gmail.com",
+      "senha": "123!@#qweQWE",
+      "id": 1
+    }
+  ],
+  "pacientes": [
+    {
+      "nome": "nome",
+      "cpf": "123.123.123-13",
+      "outro": {
+        "nascimento": "07/07/1996",
+        "email": "email@gmail.com",
+        "sexo": "sexo",
+        "nascionalidade": "nascionalidade",
+        "naturalidade": "naturalidade",
+        "profissao": "profissao",
+        "escolaridade": "escolaridade",
+        "estadoCivil": "estadoCivil",
+        "nomeDaMae": "nomeDaMae",
+        "nomeDoPai": "nomeDoPai"
+      },
+      "id": 1
+    }
+  ],
+  "prontuarios": [
+    {
+      "paciente": "1",
+      "tipo": "fatoRelevante",
+      "data": "2023-07-07",
+      "dados": {
+        "titulo": "titulo",
+        "texto": "texto"
+      },
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+   
+    
+    <!-- bootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/cb111e4a51.js" crossorigin="anonymous"></script>
+
+    <title>Arnia: Projeto I</title>
+</head>
+<body>
+     
+    
+    <header class="d-flex">
+        <div class="shadow bg-white d-flex justify-content-center align-items-center" id="header-logo">
+            <img src="../../src/header/logo.png" alt="LOGO">
+        </div>
+        <div class="row p-2 bg-white shadow m-0" style="width: 100%;">
+            <div class="container d-flex justify-content-between">
+                <div class="d-flex align-items-center p-2">
+                    <a href="../dashboard/index.html" class="text-decoration-none d-none">Voltar para listagem</a>
+                </div>
+                <div class="d-flex me-2">
+                    <!-- <p class="fs-2 text-arnia">Bem vindo(a),<span class="fw-bold">Usuario</span></p>    -->
+                    <div class="dropdown">
+                        <span class="fs-2 text-arnia">
+                            Bem vindo(a),
+                        </span>
+                        <span class="btn btn-transparent dropdown-toggle fs-2 p-0 " id="dd-header" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span id="nomeDoUsuario" class="fs-2 text-arnia"> Usuario </span>
+                        </span>
+                        <div class="dropdown-menu py-0 justify-content-center border-0 bg-transparent">
+                              <div class="row drop-logoff pt-2">
+                                <div class="d-flex justify-content-center my-0"><i class="fa-solid fa-play fa-rotate-270 fa-xl" style="color: #ffffff;"></i></div>
+                                <div class="bg-gradiente rounded-top-4 p-2 seta">
+                                    <p class="m-0">Admin</p>
+                                    <p id="emailDoUsuario" class="m-0 fs-email">lucasdiascarvalho22@email.com</p>
+                                </div>
+                                <div class="bg-white rounded-bottom-4 p-2 p-3">
+                                    <p class="m-0"><i class="fa-solid fa-arrow-turn-up fa-rotate-90" style="color: #25e928;"></i></i><button onclick="window.location.replace(`http://127.0.0.1:5500/page/login/index.html`)" class="ms-2 border-0 bg-transparent">Sair</button></p>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container p-2">
+            <p class="fs-2">Meus pacientes</p>
+            <div class="bg-white p-4 d-flex flex-column gap-4">
+                <div class="row justify-content-between">
+                    <button onclick="CriarPaciente()" class="btn btn-arnia col-2 text-white rounded-5"> + Novo cadastro</button>
+                    <div class="col-4">
+                        <div class="input-group">
+                            <input id="filtro" type="text" class="form-control rounded-start-5" placeholder="pesquisar pelo nome" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button onclick="filtrarUsuario()" class="btn btn-arnia rounded-end-5 text-white" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass mx-2" style="color: #ffffff;"></i> <span>Filtrar</span> </button>
+                        </div>
+                    </div>
+                </div>
+                <div name="tabela">
+                    <div name="titulos" class="container d-flex border">
+                        <div class="col-2 p-1 ps-2  d-flex justify-content-center "><p class="text-info mb-0">Código</p></div>
+                        <div class="col-4 p-1 ps-2  border-start "><p class="text-info mb-0">Nome</p></div>
+                        <div class="col-4 p-1 ps-2  border-start"><p class="text-info mb-0">CPF</p></div>
+                        <div class="col-2 p-1 ps-2  border-start d-flex justify-content-center"><p class="text-info mb-0">Ações</p></div>
+                    </div>
+                    <div id="conteudo" name="conteudo">
+                       
+                    </div>
+                </div>
+                <!-- <div class="d-flex justify-content-center">
+                    <div>
+                        <button>1</button><button>2</button><button>3</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+
+
+
+        <!-- LISTAGEM PARA CADA PASSIENTES..
+                        <div class="container d-flex border border-top-0">
+                            <div class="col-2 p-1 ps-2  d-flex justify-content-center "><p class="text-secondary mb-0">1</p></div>
+                            <div class="col-4 p-1 ps-2  border-start "><p class="text-secondary mb-0">Lucas</p></div>
+                            <div class="col-4 p-1 ps-2  border-start"><p class="text-secondary mb-0">000.000.000-00</p></div>
+                            <div class="col-2 p-1 ps-2  border-start d-flex justify-content-center"><p class="text-secondary mb-0">
+                                <button class="p-1 px-2 border-success rounded"><i class="fa-solid fa-address-book" style="color: #195f17;"></i></i></button>
+                                <button class="p-1 px-2 border-primary rounded"><i class="fa-solid fa-pen" style="color: #2c5ee9;"></i></button>
+                                <button class="p-1 px-2 border-danger rounded"><i class="fa-solid fa-trash-can" style="color: #f43e3e;"></i></button>
+                            </p></div>
+                        </div> -->
+    </main>
+
+    <!-- MODAL NOVO PACIENTE -->
+    <div id="modalNovoPaciente" class="bg-modal d-none">
+        <div class=" position-relative modal-paciente">
+            <div class="d-flex justify-content-between">
+                <h4 class="text-arnia">Novo Paciente</h4>
+                <button onclick="fecharModal()" class="border-0 bg-transparent"><i class="fa-solid fa-circle-xmark" style="color: #000000;"></i></button>
+            </div>
+            <form id="formNovoPaciente" action="" class="mt-2 mb-2">
+                <div class="d-flex flex-wrap gap-4">
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">CPF</label><input id="cPF" placeholder="Digite" type="text" ></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Nome</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Data de Nascimento</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">E-mail</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Sexo/Gênero</label><select class="form-select" id="inputGroupSelect01">
+                            <option selected>Escolha...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                          </select></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Nacionalidade</label><select class="form-select" id="inputGroupSelect02">
+                            <option selected>Escolha...</option>
+                            <option value="Brasileiro">Brasileiro</option>
+                            <option value="Estrangeiro">Estrangeiro</option>
+                          </select></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Naturalidade</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Profissão</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Escolaridade</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Estado civil</label><select class="form-select" id="inputGroupSelect03">
+                            <option selected>Escolha...</option>
+                            <option value="Solteiro">Solteiro(a)</option>
+                            <option value="Casado">Casado(a)</option>
+                            <option value="Viuvo">Viuvo(a)</option>
+                          </select></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Mãe</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                    <div class="d-inline-block">
+                        <div class="d-flex flex-column"><label for="">Pai</label><input placeholder="Digite" type="text"></div>
+                    </div>
+                </div>
+            </form>
+            <div class="rodape">
+                <div class="p-4">
+                    <hr class="hr-modal border-2 border-dark-subtle  position-absolute start-0">
+                </div>
+                <div class=" d-flex justify-content-between">
+                    <p class="text-secondary">*Campos obrigatórios</p>
+                    <div class="d-flex gap-2">
+                        <button class="btn" onclick="fecharModal()">Cancelar</button>
+                        <button form="formNovoPaciente" type="submit" id="btnCriarPaciente" class="btn btn-arnia px-5 text-white ">Criar</button>
+                        <button form="formNovoPaciente" type="submit" id="btnEditarPaciente" class="btn btn-arnia px-5 text-white d-none">Salvar alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL CADASTRADO COM SUCESSO -->
+    <div id="modalCadastroConcluido" class="bg-modal d-none">
+        <div class="bg-white shadow rounded-4 d-flex flex-column justify-content-center align-items-center" style="width: 30rem; height: 25rem;">
+            <img src="../../src/dashboard/check-mark-verified.gif" alt="" style="width: 15rem; height: 15rem;">
+            <p class="fs-4 text-arnia">Paciente cadastrado com sucesso!</p>
+            <button id="enviarDados" class="px-5 btn btn-arnia border-0 text-white" style="width: 15rem;">OK</button>
+        </div>
+    </div>
+
+
+
+<script src="./app.js"></script>
+</body>
+</html>

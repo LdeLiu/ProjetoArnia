@@ -1,0 +1,78 @@
+/* background */
+#background{
+  height: 110vh;
+  width: 25rem;
+  object-fit: cover;
+
+  top: 0;
+  z-index: -1;
+}
+
+.input-arnia{
+  border-radius: 0.5rem;
+  height: 1rem;
+}
+#header-logo{
+  width: 5rem;
+  height: 5rem;
+
+  z-index: 99;
+}
+
+/* MODAL */
+.bg-modal{
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 999;
+
+  position: absolute;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-paciente{
+  width: 59.5rem;
+  padding: 1.3rem 2rem;
+
+  background-color: white;
+
+  border-radius: 0.5rem;
+}
+.modal-paciente input, .modal-paciente select{
+  border: solid #BDBDBD 1px;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  width: 17.5rem;
+}
+
+
+
+/* MODAL NOVA SESSÃO */
+.modal-sessao{
+  
+  height: 30rem;
+  padding: 1.3rem 2rem;
+
+  background-color: white;
+
+}
+.modal-sessao-footer{
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+} 
+
+
+/*conteudo do prontuario*/

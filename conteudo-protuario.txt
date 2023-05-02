@@ -1,0 +1,56 @@
+<div class="bg-white p-3 rounded-end shadow my-1 d-flex position-relative">
+                            <!-- BARRA LATERAL (MUDAR A COR) -->
+                            <div class="bg-arnia position-absolute top-0 bottom-0 start-0">
+                                &nbsp;
+                            </div>
+                            <!-- ICONE E LINHA PARA CIMA (MUDAR A COR E A IMAGEM) -->
+                            <div>
+                                <img src="../../src/prontuario/conteudo/mental-health.png" alt="" class="position-absolute top-0 translate-middle" style="left: 3rem;">
+                            </div>
+                            <!-- CONTEUDO -->
+                            <div class="row col-12">
+                                <div class="d-flex justify-content-end p-0">
+                                   <button class="bg-transparent border-0">...</button>
+                                </div>
+                                <div class="pe-0">
+                                    <p class="fw-bold fs-5 m-0">Sessão <span>0</span></p>
+                                    <p class="" style="font-size: 0.8rem;">Data da sessão</p>
+                                        <p>descrição da sessão Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus explicabo vero mollitia quis ea dolores vitae quo tenetur id sed est minima dignissimos, neque ut, molestias optio sapiente excepturi a apos linha maxima mostrar o botão <button class="border-0 bg-transparent text-primary">Ver mais</button></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-3 rounded-end shadow my-1 d-flex position-relative">
+                            <!-- BARRA LATERAL (MUDAR A COR) -->
+                            <div class="bg-arnia position-absolute top-0 bottom-0 start-0">
+                                &nbsp;
+                            </div>
+                            <!-- ICONE E LINHA PARA CIMA (MUDAR A COR E A IMAGEM) -->
+                            <div>
+                                <div class="position-relative border">
+                                    <div class="bg-arnia position-absolute" style="top: -4.5rem; left: 1.8rem; height: 2rem; width: 0.16rem;">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <img src="../../src/prontuario/conteudo/mental-health.png" alt="" class="position-absolute top-0 translate-middle" style="left: 3rem;">
+                            </div>
+                            <!-- CONTEUDO -->
+                            <div class="row col-12">
+                                <div class="dropdown d-flex justify-content-end">
+                                    <button class="btn btn-secondary bg-transparent border-0 text-black" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      ...
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <div class="d-flex flex-column p-1">
+                                            <button class="border-0 bg-transparent"><a class="dropdown-item text-primary d-flex  gap-2 align-items-center" href="#"><i class="fa-solid fa-pen" style="color: #2c5ee9;"></i>Editar</a></button>
+                                            <button class="border-0 bg-transparent"><a class="dropdown-item text-danger d-flex  gap-2 align-items-center" href="#"><i class="fa-solid fa-trash-can" style="color: #f43e3e;"></i>Excluir</a></button>
+                                        </div>
+                                    </ul>
+                                  </div>
+                                <div class="pe-0">
+                                    <p class="fw-bold fs-5 m-0">Sessão <span>0</span></p>
+                                    <p class="" style="font-size: 0.8rem;">Data da sessão</p>
+                                        <p>descrição da sessão Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus explicabo vero mollitia quis ea dolores vitae quo tenetur id sed est minima dignissimos, neque ut, molestias optio sapiente excepturi a apos linha maxima mostrar o botão <button class="border-0 bg-transparent text-primary">Ver mais</button></p>
+                                </div>
+                            </div>
+                        </div>
