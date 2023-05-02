@@ -34,7 +34,7 @@ async function verificarLogin(login,senha){
 }
 
 async function metodoGet(login){
-    const apiResponse = await fetch(`http://localhost:3000/cadastro?email=${login}`)
+    const apiResponse = await fetch(`https://projetoarnia.onrender.com/cadastro?email=${login}`)
     const posts = await apiResponse.json()
     return(posts)
 }
