@@ -25,7 +25,7 @@ formCriarPaciente.addEventListener('submit',(submit)=>{
             editandoCorpo(inputs, selects, idDoPaciente)
         }
     sucessoCadastro.classList.add('d-none')
-    exibirPacientes()
+
     })
   
 })
@@ -62,7 +62,6 @@ async function exibirPacientes(req){
         conteudo.innerHTML = `<p class="alert alert-danger text-center p-2">Paciente não encontrado</p>`
         return
     }
-    conteudo.innerHTML = ''
     pacientes.forEach(paciente => {
         let tabelaCriada = criarTabelaPacientes(paciente)
         conteudo.innerHTML += tabelaCriada
