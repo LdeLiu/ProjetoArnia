@@ -108,7 +108,7 @@ async function editandoCorpo(inputs,selects, id){
     await metodoPut(editPost,id)
   }
 async function metodoPost(post){
-    await fetch("http://localhost:3000/pacientes", {
+    await fetch("https://projetoarnia.onrender.com/pacientes", {
       method: "POST",
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -118,15 +118,15 @@ async function metodoPost(post){
     });
   }
 async function metodoGet(req){
-    const apiResponse = await fetch(`http://localhost:3000/pacientes${req}`)
+    const apiResponse = await fetch(`https://projetoarnia.onrender.com/pacientes${req}`)
     return await apiResponse.json()
 }
 async function metodoDelete(id){
-    await fetch(`http://localhost:3000/pacientes/${id}`, {
+    await fetch(`https://projetoarnia.onrender.com/pacientes/${id}`, {
          method: 'DELETE' });
 }
 async function metodoPut(edit,id){
-    await fetch(`http://localhost:3000/pacientes/${id}`, {
+    await fetch(`https://projetoarnia.onrender.com/pacientes/${id}`, {
         method: "PuT",
         headers: {
           'Accept': 'application/json, text/plain, */*',

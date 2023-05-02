@@ -19,7 +19,7 @@ async function verificarLogin(login,senha){
         if(dadosLogin.senha === senha){
             localStorage.setItem("nome", dadosLogin.nome);
             localStorage.setItem("email", dadosLogin.email);
-            window.location.replace('http://127.0.0.1:5500/page/dashboard/index.html')
+            window.location.replace('https://projeto-arnia-lvkb.vercel.app/page/dashboard/index.html')
         }
         else{
             alert('senha incorreta')

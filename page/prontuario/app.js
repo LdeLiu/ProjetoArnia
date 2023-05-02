@@ -233,7 +233,7 @@ function exibirCard(id){
 
 }
 async function editarCard(prontId,tipo,btn){
-    const respostaApi = await fetch(`http://localhost:3000/prontuarios/${prontId}`)
+    const respostaApi = await fetch(`https://projetoarnia.onrender.com/prontuarios/${prontId}`)
     const dados = await respostaApi.json()
 
     if(dados.tipo === "sessao"){
@@ -345,7 +345,7 @@ function usuarioLogado(){
 
 // api
 async function metodoPut(id,editCard){
-    await fetch(`http://localhost:3000/prontuarios/${id}`, {
+    await fetch(`https://projetoarnia.onrender.com/prontuarios/${id}`, {
         method: "PUT",
         headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -355,7 +355,7 @@ async function metodoPut(id,editCard){
       });
 }
 async function metodoPost(post){
-    await fetch("http://localhost:3000/prontuarios", {
+    await fetch("https://projetoarnia.onrender.com/prontuarios", {
       method: "POST",
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -365,23 +365,23 @@ async function metodoPost(post){
     });
   }
 async function metodoGet(id,filter){
-    const respostaApi = await fetch(`http://localhost:3000/prontuarios?paciente=${id}${filter}`)
+    const respostaApi = await fetch(`https://projetoarnia.onrender.com/prontuarios?paciente=${id}${filter}`)
     return await respostaApi.json()
   }
 async function excluirSessao(id){
-    await fetch(`http://localhost:3000/prontuarios/${id}`, {
+    await fetch(`https://projetoarnia.onrender.com/prontuarios/${id}`, {
          method: 'DELETE' });
-    window.location.replace('http://127.0.0.1:5500/page/prontuario/index.html')
+    window.location.replace('https://projeto-arnia-lvkb.vercel.app/page/prontuario/index.html')
 }
 
 //prontuarios
 function abrirDetalhes(id,sessao){
     localStorage.setItem("idDetalhes", id);
     localStorage.setItem("numeroDaSessao", sessao )
-    window.location.replace('http://127.0.0.1:5500/page/detalhes/sessao.html')
+    window.location.replace('https://projeto-arnia-lvkb.vercel.app/page/detalhes/sessao.html')
 }
 async function pacienteSelecionado(id){
-    const apiResponse = await fetch(`http://localhost:3000/pacientes?id=${id}`)
+    const apiResponse = await fetch(`https://projetoarnia.onrender.com/pacientes?id=${id}`)
     const dados = await apiResponse.json()
     const asideInfo = document.querySelector('#asideInfo')
 

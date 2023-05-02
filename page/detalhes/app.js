@@ -7,7 +7,7 @@ document.querySelector('#tituloDaSessao').innerText = (`Sessão ${Sessao}`)
 dados()
 
 async function dados(){
-    const respostaApi = await fetch(`http://localhost:3000/prontuarios?id=${idSessao}`)
+    const respostaApi = await fetch(`https://projetoarnia.onrender.com/prontuarios?id=${idSessao}`)
     const dados = await respostaApi.json()
 
     document.querySelector('#dataDaSessao').innerText = (`${converterData(dados[0].data)}`)
@@ -30,7 +30,7 @@ async function verificarPagamento(dados){
 }
 
 async function metodoPut(id,editCard){
-    await fetch(`http://localhost:3000/prontuarios/${id}`, {
+    await fetch(`https://projetoarnia.onrender.com/prontuarios/${id}`, {
         method: "PUT",
         headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -40,9 +40,9 @@ async function metodoPut(id,editCard){
       });
 }
 async function excluirSessao(id){
-    await fetch(`http://localhost:3000/prontuarios/${id}`, {
+    await fetch(`https://projetoarnia.onrender.com/prontuarios/${id}`, {
          method: 'DELETE' });
-    window.location.replace('http://127.0.0.1:5500/page/prontuario/index.html')
+    window.location.replace('https://projeto-arnia-lvkb.vercel.app/page/prontuario/index.html')
 }
 function usuarioLogado(){
     const nomeDoUsuario = document.querySelector('#nomeDoUsuario')
@@ -77,7 +77,7 @@ function fecharModal(btnId){
     btnId.classList.add('d-none')
 }
 async function editarCard(prontId){
-    const respostaApi = await fetch(`http://localhost:3000/prontuarios/${prontId}`)
+    const respostaApi = await fetch(`https://projetoarnia.onrender.com/prontuarios/${prontId}`)
     const dados = await respostaApi.json()
 
         const form = document.querySelector('#formNovaSessao')

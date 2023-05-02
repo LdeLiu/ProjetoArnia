@@ -99,7 +99,7 @@ const criandoCorpo = async (nome,email,senha) => {
   }
 function redirecionamento(){
     //alertar que foi cadastrado com sucesso
-    window.location.replace('http://127.0.0.1:5500/page/login/index.html')
+    window.location.replace('https://projeto-arnia-lvkb.vercel.app/page/login/index.html')
 }
 async function verificandoEmail(mail) {
     const response = await metodoGet()
@@ -120,7 +120,7 @@ async function verificandoEmail(mail) {
 
 //funções api--->
 async function metodoPost(post){
-    await fetch("http://localhost:3000/cadastro", {
+    await fetch("https://projetoarnia.onrender.com/cadastro", {
       method: "POST",
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -130,6 +130,6 @@ async function metodoPost(post){
     });
   }
 async function metodoGet(){
-    const apiResponse = await fetch("http://localhost:3000/cadastro")
+    const apiResponse = await fetch("https://projetoarnia.onrender.com/cadastro")
     return await apiResponse.json()
 }
