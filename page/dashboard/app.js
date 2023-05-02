@@ -24,13 +24,10 @@ formCriarPaciente.addEventListener('submit',(submit)=>{
         else{
             editandoCorpo(inputs, selects, idDoPaciente)
         }
+    sucessoCadastro.classList.add('d-none')
     })
   
 })
-
-
-
-
 
 
 function filtrarUsuario(){
@@ -44,7 +41,7 @@ function filtrarUsuario(){
         return
     }
     else{
-            exibirPacientes(`?nome=${filtro}`)
+        exibirPacientes(`?nome=${filtro}`)
     }
     
 
@@ -68,6 +65,7 @@ async function exibirPacientes(req){
         let tabelaCriada = criarTabelaPacientes(paciente)
         conteudo.innerHTML += tabelaCriada
     })
+    
 }
 async function criandoCorpo(inputs,selects){
     const novoPost = {
@@ -252,5 +250,5 @@ function visializandoPaciente(id){
 //botão redirecionamento para prontuarios
 function prontuarioPaciente(id){
     localStorage.setItem("idPaciente", id);
-    window.location.replace('http://127.0.0.1:5500/page/prontuario/index.html')
+    window.location.replace('https://projeto-arnia-lvkb.vercel.app/page/prontuario/index.html')
 }
