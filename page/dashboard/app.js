@@ -62,6 +62,7 @@ async function exibirPacientes(req){
         conteudo.innerHTML = `<p class="alert alert-danger text-center p-2">Paciente não encontrado</p>`
         return
     }
+    conteudo.innerHTML = ''
     pacientes.forEach(paciente => {
         let tabelaCriada = criarTabelaPacientes(paciente)
         conteudo.innerHTML += tabelaCriada
