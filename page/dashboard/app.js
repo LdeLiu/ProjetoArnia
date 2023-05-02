@@ -25,6 +25,7 @@ formCriarPaciente.addEventListener('submit',(submit)=>{
             editandoCorpo(inputs, selects, idDoPaciente)
         }
     sucessoCadastro.classList.add('d-none')
+    Location.reload()
     })
   
 })
